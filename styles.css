@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fbd3e9, #bbf0e8, #ffecd2, #f6d365);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+    z-index: 10; /* Ensure the card is on top of the rain */
+}
+
+input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #e67e22;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.buttons {
+    margin: 10px 0;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e67e22;
+    color: white;
+}
+
+button:hover {
+    background-color: #d35400;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e67e22;
+    background-color: #fff5e6; /* Pleasant background for result */
+    border: 1px solid #e67e22;
+    border-radius: 5px;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emoji-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure emojis don't interfere with user interactions */
+    overflow: hidden;
+}
+
+@keyframes fall {
+    from { transform: translateY(-100px); }
+    to { transform: translateY(100vh); }
+}
+
+body.friends-background .emoji-rain,
+body.lovers-background .emoji-rain,
+body.affection-background .emoji-rain,
+body.marriage-background .emoji-rain,
+body.enemy-background .emoji-rain,
+body.siblings-background .emoji-rain {
+    background: none;
+}
+
+body.friends-background .emoji-rain span {
+    color: yellow;
+    animation: fall 10s linear infinite;
+}
+
+body.lovers-background .emoji-rain span {
+    color: pink;
+    animation: fall 10s linear infinite;
+}
+
+body.affection-background .emoji-rain span {
+    color: red;
+    animation: fall 10s linear infinite;
+}
+
+body.marriage-background .emoji-rain span {
+    color: gold;
+    animation: fall 10s linear infinite;
+}
+
+body.enemy-background .emoji-rain span {
+    color: blue;
+    animation: fall 10s linear infinite;
+}
+
+body.siblings-background .emoji-rain span {
+    color: purple;
+    animation: fall 10s linear infinite;
+}
